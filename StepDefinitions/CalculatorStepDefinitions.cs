@@ -3,21 +3,22 @@ namespace SpecFlowProjectSharedata.StepDefinitions
     [Binding]
     public sealed class CalculatorStepDefinitions
     {
-        private readonly Calculator _calculator;
+        private readonly ScenarioContext _scenarioContext;
+        private readonly Calculator _calculator = new Calculator();        
         private int _result;
 
-        public CalculatorStepDefinitions(Calculator calculator)
+        public CalculatorStepDefinitions(ScenarioContext _scenarioContext)
         {
-            _calculator = calculator;
+            _scenarioContext = _scenarioContext;
         }
 
         [When("I ennter \"(.*?)\" use \"(.*?)\" and enter \"(.*?)\"")]
-        public void WhenTheSecondNumberIs(int numberFirst, string operation, int numberSecond)
+        public void WhenEnterTwoNumbersAndChoseOperation(int numberFirst, string operation, int numberSecond)
         {
             _calculator.FirstNumber = numberFirst;
             _calculator.SecondNumber = numberSecond;
             switch (operation)
-            {
+            {   
                 case "+":
                     _result = _calculator.Add();
                     break;
