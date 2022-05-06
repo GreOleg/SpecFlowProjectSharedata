@@ -7,12 +7,12 @@ namespace SpecFlowProjectSharedata.StepDefinitions
         private readonly Calculator _calculator = new Calculator();        
         private int _result;
 
-        public CalculatorStepDefinitions(ScenarioContext _scenarioContext)
+        public CalculatorStepDefinitions(ScenarioContext scenarioContext)
         {
-            _scenarioContext = _scenarioContext;
+            _scenarioContext = scenarioContext;
         }
 
-        [When("I ennter \"(.*?)\" use \"(.*?)\" and enter \"(.*?)\"")]
+        [When("I enter \"(.*?)\" use \"(.*?)\" and enter \"(.*?)\"")]
         public void WhenEnterTwoNumbersAndChoseOperation(int numberFirst, string operation, int numberSecond)
         {
             _calculator.FirstNumber = numberFirst;

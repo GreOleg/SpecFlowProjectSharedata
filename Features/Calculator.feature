@@ -2,7 +2,7 @@
 
  Scenario Outline: Opreations
 
-    When I ennter "<num1>" use "<operation>" and enter "<num2>"
+    When I enter "<num1>" use "<operation>" and enter "<num2>"
     Then I expect number "<result>"
 
     Examples:
